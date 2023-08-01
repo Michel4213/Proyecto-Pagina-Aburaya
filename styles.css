@@ -1,0 +1,1011 @@
+@font-face {
+  font-family: "Akira";
+  src: url(/assets/fonts/Akira\ Expanded\ Demo.otf);
+  font-weight: bold;
+  font-style: bold;
+}
+
+:root {
+  --clr-dark: #000000;
+  --clr-light: #ffffff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(39, 39, 39);
+}
+
+.dark-mode {
+  --clr-light: #000000;
+  --clr-dark: #ffffff;
+}
+
+.header {
+  z-index: 50;
+  width: auto;
+  height: 110px;
+  background-color: black;
+}
+
+.contenedorhead {
+  z-index: 50;
+  width: 100%;
+  height: 11%;
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  background-color: black;
+}
+
+.toggle-switch {
+  margin-top: 30px;
+  position: relative;
+  width: 100px;
+  height: 60px;
+  --light: #d8dbe0;
+  --dark: #28292c;
+  --link: rgb(27, 129, 112);
+  --link-hover: rgb(24, 94, 82);
+}
+
+.switch-label {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  background-color: var(--dark);
+  border-radius: 25px;
+  cursor: pointer;
+  border: 3px solid var(--dark);
+}
+
+.checkbox {
+  position: absolute;
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.checkbox:checked~.slider {
+  background-color: var(--light);
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 12px -4px 0px 0px var(--light);
+  box-shadow: inset 12px -4px 0px 0px var(--light);
+  background-color: var(--dark);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.checkbox:checked~.slider::before {
+  -webkit-transform: translateX(50px);
+  -ms-transform: translateX(50px);
+  transform: translateX(50px);
+  background-color: var(--dark);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.logoheader {
+  width: auto;
+  height: auto;
+}
+
+.carritocompras {
+  margin-top: 10%;
+  border: none;
+  align-self: center;
+  width: 100px;
+  height: 80px;
+  background-color: #000000;
+  border-radius: 1em;
+  color: #ffffff;
+}
+
+.carritocompras:hover {
+  color: #000000;
+  background: #ffffff;
+  -webkit-transform: translate(0, 0.25em);
+  transform: translate(0, 0.25em);
+}
+
+.carritocompras:active {
+  color: #000000;
+  background: #e8e8e8;
+  -webkit-transform: translate(0em, 0.75em);
+  transform: translate(0em, 0.75em);
+}
+
+.atras {
+  margin-top: 10%;
+  border: none;
+  align-self: center;
+  width: 100px;
+  height: 90px;
+  background-color: #000000;
+  border-radius: 1em;
+  color: #ffffff;
+}
+
+.atras:hover {
+  color: #000000;
+  background: #ffffff;
+  -webkit-transform: translate(0, 0.25em);
+  transform: translate(0, 0.25em);
+}
+
+.atras:active {
+  color: #000000;
+  background: #e8e8e8;
+  -webkit-transform: translate(0em, 0.75em);
+  transform: translate(0em, 0.75em);
+}
+
+.compras{
+  margin: 3%;
+  width: 94%;
+  height: 800px;
+  text-align: center;
+  background-color: var(--clr-light);
+}
+
+.carritoMas {
+  margin-top: 10%;
+  border: none;
+  align-self: center;
+  width: 250px;
+  height: 250px;
+  color: var(--clr-dark);
+}
+
+.txtcarro {
+  font-family: 'Montserrat SemiBold', sans-serif; ;
+  font-weight: 600;
+  font-size: 170%;
+  color: var(--clr-dark);
+}
+
+#banner {
+  display: flex;
+  position: relative;
+  width: 94%;
+  height: 600px;
+  margin: 3%;
+}
+
+#bannerimg {
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+
+.textbanner {
+  font-family: 'Montserrat SemiBold', sans-serif;
+  margin: 100px;
+  padding: 0;
+  color: #ffffff;
+  z-index: 1;
+  position: absolute;
+  top: 15%;
+}
+
+#b1 {
+  font-weight: bold;
+  font-size: 130%;
+}
+
+#b2 {
+  font-size: 300%;
+}
+
+
+#banner2 {
+  margin: 3%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-light);
+}
+
+#textbanner2 {
+  font-family: 'Akira';
+  text-align: center;
+  font-size: 300%;
+  font-weight: bold;
+  margin-bottom: 3%;
+  color: var(--clr-dark);
+}
+
+#btnproductos {
+  font-family: 'Montserrat', sans-serif;
+  width: 200px;
+  height: 70px;
+  cursor: pointer;
+  border: 0;
+  font-size: 15px;
+}
+
+button.btn {
+  font-weight: 600;
+  color: var(--clr-light);
+  text-transform: uppercase;
+  padding: 1em 1em;
+  background: var(--clr-dark);
+  border-radius: 0%;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+button.btn::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 10px;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.442);
+  -webkit-transform: translate3d(0, 0.75em, -1em);
+  transform: translate3d(0, 0.75em, -1em);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+button.btn:hover {
+  color: var(--clr-light);
+  background: var(--clr-dark);
+  -webkit-transform: translate(0, 0.25em);
+  transform: translate(0, 0.25em);
+}
+
+button.btn:active {
+  color: var(--clr-dark);
+  background: var(--clr-light);
+  -webkit-transform: translate(0em, 0.75em);
+  transform: translate(0em, 0.75em);
+}
+
+button.btn:active::before {
+  color: var(--clr-dark);
+  background: var(--clr-light);
+  -webkit-transform: translate3d(0, 0, -1em);
+  transform: translate3d(0, 0, -1em);
+}
+
+#banner3 {
+  margin: 3%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: var(--clr-light);
+}
+
+#containersamurai {
+  background-color: #000000;
+  width: 100%;
+}
+
+#textbanner3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 200%;
+  margin-top: 5%;
+  color: var(--clr-dark);
+}
+
+.linkcamisa {
+  text-decoration: none;
+  color: var(--clr-dark);
+}
+
+.linkcamisa:hover {
+  text-decoration: none;
+  color: var(--clr-dark);
+}
+
+#panelescamisas {
+  background-color: var(--clr-light);
+  height: 1200px;
+  margin: 3%;
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  grid-template-rows: 50% 50%;
+  text-align: center;
+}
+
+.camisa {
+  margin: 3%;
+  border: solid var(--clr-dark);
+  padding-left: 5%;
+  padding-right: 5%;
+  z-index: 3;
+}
+
+.flip-card {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  width: 100%;
+  height: 70%;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  width: 70%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 10px solid var(--clr-dark);
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+.txtcamisa {
+  margin-top: 5%;
+  border: solid 2px var(--clr-dark);
+}
+
+.txt1 {
+  font-family: 'Akira';
+  font-weight: 600;
+  font-size: 100%;
+  color: var(--clr-dark);
+}
+
+.txt2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 120%;
+  color: var(--clr-dark);
+}
+
+.camiseta {
+  margin: 5%;
+}
+
+.lookbookcontainer {
+  margin: 3%;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-light);
+}
+
+.lookbooklogo {
+  background-color: #ffffff;
+  border-radius: 2em;
+  margin-top: 1%;
+  width: 30%;
+  height: 75%;
+}
+
+#btnlookbook {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-family: 'Montserrat', sans-serif;
+  width: 250px;
+  height: 80px;
+  cursor: pointer;
+  border: 0;
+  font-size: 15px;
+}
+
+
+@media (max-width:800px) {
+
+  .header {
+    width: auto;
+    height: 70px;
+    background-color: black;
+  }
+
+  .contenedorhead {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-evenly;
+    position: fixed;
+  }
+
+  .toggle-switch {
+    margin-top: 20px;
+    position: relative;
+    width: 60px;
+    height: 50px;
+    --light: #d8dbe0;
+    --dark: #28292c;
+    --link: rgb(27, 129, 112);
+    --link-hover: rgb(24, 94, 82);
+  }
+  
+  .switch-label {
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    background-color: var(--dark);
+    border-radius: 25px;
+    cursor: pointer;
+    border: 3px solid var(--dark);
+  }
+  
+  .checkbox {
+    position: absolute;
+    display: none;
+  }
+  
+  .slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  
+  .checkbox:checked~.slider {
+    background-color: var(--light);
+  }
+  
+  .slider::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    -webkit-box-shadow: inset 6px -2px 0px 0px var(--light);
+    box-shadow: inset 6px -2px 0px 0px var(--light);
+    background-color: var(--dark);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  
+  .checkbox:checked~.slider::before {
+    -webkit-transform: translateX(25px);
+    -ms-transform: translateX(25px);
+    transform: translateX(25px);
+    background-color: var(--dark);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+
+  .logoheader {
+    width: auto;
+    height: auto;
+  }
+
+  .carritocompras {
+    align-self: center;
+    max-width: 50px;
+    max-height: 50px;
+  }
+
+  #banner {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 200px;
+    margin: 0%;
+  }
+
+  #bannerimg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+
+  .textbanner {
+    display: none;
+  }
+
+  #banner2 {
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #textbanner2 {
+    font-family: 'Akira';
+    text-align: center;
+    font-size: 200%;
+    font-weight: bold;
+    margin-bottom: 3%;
+  }
+
+
+  #banner3 {
+    height: 350px;
+  }
+
+  #containersamurai {
+    width: 100%;
+  }
+
+  #samurai {
+    width: 60%;
+  }
+
+  #textbanner3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 150%;
+    margin: 0%;
+  }
+
+  #panelescamisas {
+    height: 1200px;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: repeat(3, 33%);
+  }
+  
+  .camisa {
+    margin: 3%;
+    border: solid var(--clr-dark);
+    padding-left: 5%;
+    padding-right: 5%;
+    z-index: 3;
+  }
+  
+  .flip-card {
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    width: 100%;
+    height: 55%;
+    perspective: 1000px;
+  }
+  
+  .flip-card-inner {
+    width: 110%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border: 3px solid var(--clr-dark);
+  }
+  
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+  
+  .txtcamisa {
+    margin-top: 5%;
+    border: solid 2px var(--clr-dark);
+  }
+  
+  .txt1 {
+    font-family: 'Akira';
+    font-weight: 600;
+    font-size: 80%;
+    color: var(--clr-dark);
+  }
+  
+  .txt2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 90%;
+    color: var(--clr-dark);
+  }
+  
+
+  .camisa {
+    margin: 0%;
+    width: 100%;
+    height: 50%;
+  }
+
+  .camisa:hover {
+    width: 105%;
+    height: 55%;
+  }
+
+  .txtcamisa {
+    margin-top: 3%;
+  }
+
+  .txt1 {
+    margin: 0%;
+  }
+
+  .lookbookcontainer {
+    margin: 3%;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lookbooklogo {
+    width: 70%;
+    height: 50%;
+  }
+}
+
+footer {
+  margin-top: 10%;
+}
+
+.footer-widget p {
+  margin-bottom: 27px;
+}
+
+
+#footeraburaya {
+  font-family: 'Akira';
+  font-size: 250%;
+  color: white;
+  line-height: 28px;
+  text-align: center;
+}
+
+#formularioregistro {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.dk-footer {
+  padding: 75px 0 0;
+  background-color: #151414;
+  position: relative;
+  z-index: 2;
+}
+
+.dk-footer .contact-us {
+  margin-top: 0;
+  margin-bottom: 30px;
+  padding-left: 80px;
+}
+
+.dk-footer .contact-us .contact-info {
+  margin-left: 50px;
+}
+
+.dk-footer .contact-us.contact-us-last {
+  margin-left: -80px;
+}
+
+.dk-footer .contact-icon i {
+  font-size: 24px;
+  top: -15px;
+  position: relative;
+  color: #007bff;
+}
+
+.dk-footer-box-info {
+  position: absolute;
+  top: -122px;
+  background: #202020;
+  padding: 40px;
+  z-index: 2;
+}
+
+.dk-footer-box-info .footer-social-link h3 {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 25px;
+}
+
+.dk-footer-box-info .footer-social-link ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dk-footer-box-info .footer-social-link li {
+  display: inline-block;
+}
+
+.dk-footer-box-info .footer-social-link a i {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  background: #000;
+  margin-right: 5px;
+  color: #fff;
+}
+
+.dk-footer-box-info .footer-social-link a i.fa-facebook {
+  background-color: #3B5998;
+}
+
+.dk-footer-box-info .footer-social-link a i.fa-twitter {
+  background-color: #55ACEE;
+}
+
+.dk-footer-box-info .footer-social-link a i.fa-google-plus {
+  background-color: #DD4B39;
+}
+
+.dk-footer-box-info .footer-social-link a i.fa-linkedin {
+  background-color: #0976B4;
+}
+
+.dk-footer-box-info .footer-social-link a i.fa-instagram {
+  background-color: #B7242A;
+}
+
+.footer-awarad {
+  margin-top: 285px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 100%;
+  -moz-box-flex: 0;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.footer-awarad p {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  margin-left: 20px;
+  padding-top: 15px;
+}
+
+.footer-info-text {
+  margin: 26px 0 32px;
+}
+
+.footer-left-widget {
+  padding-left: 80px;
+}
+
+.footer-widget .section-heading {
+  margin-bottom: 35px;
+}
+
+.footer-widget h3 {
+  font-size: 24px;
+  color: #fff;
+  position: relative;
+  margin-bottom: 15px;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+
+.footer-widget ul {
+  width: 50%;
+  float: left;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-widget li {
+  margin-bottom: 18px;
+}
+
+.footer-widget p {
+  margin-bottom: 27px;
+}
+
+.footer-widget a {
+  color: #878787;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.footer-widget a:hover {
+  color: #007bff;
+}
+
+.footer-widget:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.dk-footer-form {
+  position: relative;
+}
+
+.dk-footer-form input[type=email] {
+  padding: 14px 28px;
+  border-radius: 50px;
+  background: #2E2E2E;
+  border: 1px solid #2E2E2E;
+}
+
+.dk-footer-form input::-webkit-input-placeholder,
+.dk-footer-form input::-moz-placeholder,
+.dk-footer-form input:-ms-input-placeholder,
+.dk-footer-form input::-ms-input-placeholder,
+.dk-footer-form input::-webkit-input-placeholder {
+  color: #878787;
+  font-size: 14px;
+}
+
+.dk-footer-form input::-webkit-input-placeholder,
+.dk-footer-form input::-moz-placeholder,
+.dk-footer-form input:-ms-input-placeholder,
+.dk-footer-form input::-ms-input-placeholder,
+.dk-footer-form input::placeholder {
+  color: #878787;
+  font-size: 14px;
+}
+
+.dk-footer-form button[type=submit] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 12px 24px 12px 17px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border: 1px solid #007bff;
+  background: #007bff;
+  color: #fff;
+}
+
+.dk-footer-form button:hover {
+  cursor: pointer;
+}
+
+/* ==========================
+
+    Contact
+
+=============================*/
+.contact-us {
+  position: relative;
+  z-index: 2;
+  margin-top: 65px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.contact-icon {
+  position: absolute;
+}
+
+.contact-icon i {
+  font-size: 36px;
+  top: -5px;
+  position: relative;
+  color: #007bff;
+}
+
+.contact-info {
+  margin-left: 75px;
+  color: #fff;
+}
+
+.contact-info h3 {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.copyright {
+  padding: 28px 0;
+  margin-top: 55px;
+  background-color: #202020;
+}
+
+.copyright span,
+.copyright a {
+  color: #878787;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.copyright a:hover {
+  color: #007bff;
+}
+
+.copyright-menu ul {
+  text-align: right;
+  margin: 0;
+}
+
+.copyright-menu li {
+  display: inline-block;
+  padding-left: 20px;
+}
+
+.back-to-top {
+  position: relative;
+  z-index: 2;
+}
+
+.back-to-top .btn-dark {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  padding: 0;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #2e2e2e;
+  border-color: #2e2e2e;
+  display: none;
+  z-index: 999;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.back-to-top .btn-dark:hover {
+  cursor: pointer;
+  background: #FA6742;
+  border-color: #FA6742;
+}
